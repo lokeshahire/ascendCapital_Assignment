@@ -30,7 +30,7 @@ const TaskList = ({ list, onDragStart, onDragOver, onDrop }) => {
       listArr: updatedListArr, // Update the payload with the updated listArr
     };
 
-    fetch(`http://localhost:5000/task/updateTask/${list._id}`, {
+    fetch(`https://ascendbackendnew.onrender.com/task/updateTask/${list._id}`, {
       method: "PUT",
       headers: {
         "Content-type": "application/json",

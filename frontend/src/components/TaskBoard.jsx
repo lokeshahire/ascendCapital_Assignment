@@ -12,7 +12,7 @@ const TaskBoard = () => {
 
   useEffect(() => {
     // Fetch the user's lists from the server
-    fetch("http://localhost:5000/task/")
+    fetch("https://ascendbackendnew.onrender.com/task/")
       .then((response) => response.json())
       .then((data) => setLists(data.tasks))
       .catch((error) => console.error("Error fetching lists:", error));
@@ -22,7 +22,7 @@ const TaskBoard = () => {
     // Make an API request to update the task's list ID in the database
 
     console.log("taskid", taskId);
-    fetch(`http://localhost:5000/task/updateTask/${taskId}`, {
+    fetch(`https://ascendbackendnew.onrender.com/task/updateTask/${taskId}`, {
       method: "PUT",
       headers: {
         "Content-Type": "application/json",
@@ -46,7 +46,7 @@ const TaskBoard = () => {
       completed,
     };
     // console.log(payload);
-    fetch("http://localhost:5000/task/createTask", {
+    fetch("https://ascendbackendnew.onrender.com/task/createTask", {
       method: "POST",
       body: JSON.stringify(payload),
       headers: {
@@ -71,7 +71,7 @@ const TaskBoard = () => {
     // Update the list ID of the dropped task in the database
 
     console.log("sourceListId", list);
-    fetch(`http://localhost:5000/task/updateTask/`, {
+    fetch(`https://ascendbackendnew.onrender.com/task/updateTask/`, {
       method: "PUT",
       headers: {
         "Content-type": "application/json",
@@ -112,7 +112,7 @@ const TaskBoard = () => {
 
     console.log("listID", list._id);
 
-    fetch(`http://localhost:5000/task/deleteTask/${list._id}`, {
+    fetch(`https://ascendbackendnew.onrender.com/task/deleteTask/${list._id}`, {
       method: "DELETE",
     })
       .then((res) => res.json())

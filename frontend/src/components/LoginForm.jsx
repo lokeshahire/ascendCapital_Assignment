@@ -1,15 +1,17 @@
 import React, { useState } from "react";
 import "./LoginForm.css";
+import { useNavigate } from "react-router";
 const LoginForm = () => {
   const [password, setPassword] = useState("");
   const [email, setEmail] = useState("");
+  const navigate = useNavigate();
   const handleSubmit = () => {
     const payload = {
       email,
       password,
     };
     // console.log(payload);
-    fetch("http://localhost:5000/user/login", {
+    fetch("https://ascendbackendnew.onrender.com/user/login", {
       method: "POST",
       body: JSON.stringify(payload),
       headers: {
@@ -22,6 +24,8 @@ const LoginForm = () => {
         console.log(res);
       })
       .catch((err) => console.log(err));
+
+    navigate("/task");
   };
   return (
     <form className="login-form" onSubmit={handleSubmit}>

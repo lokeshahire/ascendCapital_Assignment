@@ -1,9 +1,12 @@
 import React, { useState } from "react";
 import "./RegistrationForm.css";
+import { useNavigate } from "react-router";
 const RegistrationForm = () => {
   const [name, setName] = useState("");
   const [password, setPassword] = useState("");
   const [email, setEmail] = useState("");
+  const navigate = useNavigate();
+
   const handleSubmit = () => {
     const payload = {
       name,
@@ -11,7 +14,7 @@ const RegistrationForm = () => {
       password,
     };
     // console.log(payload);
-    fetch("http://localhost:5000/user/register", {
+    fetch("https://ascendbackendnew.onrender.com/user/register", {
       method: "POST",
       body: JSON.stringify(payload),
       headers: {
@@ -21,6 +24,8 @@ const RegistrationForm = () => {
       .then((res) => res.json())
       .then((res) => console.log(res))
       .catch((err) => console.log(err));
+
+    navigate("/login");
   };
 
   return (
