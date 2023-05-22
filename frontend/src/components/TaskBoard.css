@@ -9,6 +9,18 @@
   padding: 20px;
 }
 
+.taskNewBoard {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  padding: 20px;
+  border: 2px red;
+  margin-left: 0%;
+  gap: 50px;
+  position: absolute;
+  margin-top: 200px;
+}
+
 .task-board h2 {
   margin-bottom: 20px;
 }
@@ -20,6 +32,8 @@
   overflow-x: auto;
   gap: 20px;
   padding-bottom: 20px;
+  width: 280px;
+  flex-direction: column;
 }
 
 .task-list::-webkit-scrollbar {

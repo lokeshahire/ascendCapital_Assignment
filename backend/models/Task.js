@@ -23,7 +23,11 @@ const mongoose = require("mongoose");
 const taskSchema = mongoose.Schema({
   name: String,
   completed: Boolean,
-  //   listId: Number,
+  listArr: {
+    type: [String],
+    required: true,
+    default: [],
+  }, //   listId: Number,
 });
 
 const TaskModel = mongoose.model("task", taskSchema);
